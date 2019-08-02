@@ -1,4 +1,4 @@
-<a href="https://imgur.com/U57anZ4"><img src="https://i.imgur.com/U57anZ4.png?1" title="source: imgur.com" /></a>
+<img align="left" width="100" height="100" src="https://i.imgur.com/U57anZ4.png?1" title="source: imgur.com">
 
 2048 Game-Cross
 
