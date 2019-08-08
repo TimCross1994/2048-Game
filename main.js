@@ -1,5 +1,9 @@
 let Score = 0;
 let Best = 0;
+let board = [
+    [0,0],
+    [0,0]
+]
 document.getElementById("Score");
 document.getElementById("Best");
 
