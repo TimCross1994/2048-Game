@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+}
+
+
+h1 {
+    text-align: center;
+}
+p {
+    text-align: center;
+    font-size: 20px;
+}
+
+.tile-container {
+    width: 300px;
+    column-count: 4;
+    background: green;
+}
+
+.tile-row {
+    box-sizing: border-box;
+    margin: 0 auto;
+    height: 40vw;
+    width: 60vw;
+    justify-items: center;
+    box-sizing: border-box;
+    background-color: #000000;
+    text-align: center;
+    border-radius: 25px;
+
+}
+
+.newTile { 
+    background-color: #87d86c;
+    font-size: 20px;
+    color: white;
+    border-radius: 20px;
+}
+
+.scoreTypes {
+    height: 10vw;
+    column-count: 3;
+    text-align: center;
+    width: 20vw;
+    background-color: #000000;
+    border-radius: 20px;
+    color: white;
+
+}
+#Score {
+    float: left;
+    margin: 0 auto;
+}
+
+#Best {
+    margin: 0 auto;
+}
+#Reset {
+    float: right;
+} 
