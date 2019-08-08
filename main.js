@@ -1,6 +1,6 @@
 let Score = 0;
 let Best = 0;
-let board = [0, 0, 0, 0, ];
+let board = [0, 0, 0, 0];
 
 var populateBoard = [
     [0, 0, 2, 2], //0
@@ -54,8 +54,6 @@ function render() {
 
 }
 
-
-
 document.onkeydown = function (e) {
     console.log(board)
     switch (e.key) {
@@ -84,7 +82,7 @@ document.onkeydown = function (e) {
                 break
             }
             if (board[1] == 0) {
-                console.log("1 == 0")
+                console.log("1 == 0", "hit4")
                 board[1] = board[3]
                 board[3] = 0
                 render()
@@ -94,88 +92,106 @@ document.onkeydown = function (e) {
             console.log(e.key)
             break;
         case 'ArrowDown':
-            if (board[0] == board[2]) {
-                board[0] = board[0] + board[2]
-                board[2] = 0
+                if (board[2] == board[0] || board[3] == board[1]) {
+                    console.log("2 == 0")
+                    if (board[2] == board[0]) {
+                        board[2] = board[2] + board[0]
+                        board[0] = 0
+                        // render()
+                    }
+                    if(board[3] == board[1]) {
+                        console.log("3 == 1")
+                        board[3] = board[3] + board[1]
+                        board[1] = 0
+                        // render()
+                        // break
+                    }
+                    render()
+                }
+                if (board[2] == 0) {
+                    console.log("00 == 00")
+                    board[2] = board[0]
+                    board[0] = 0
+                    render()
+                    break
+                }
+                if (board[3] == 0) {
+                    console.log("1 == 0")
+                    board[3] = board[1]
+                    board[1] = 0
+                    render()
+                    break
+                }
+                // up arrow
+                console.log(e.key)
+                break;
+        
+            case 'ArrowLeft':
+            if (board[0] == board[1] || board[2] == board[3]) {
+                console.log("1 == 3")
+                if (board[0] == board[1]) {
+                    board[0] = board[0] + board[1]
+                    board[1] = 0
+                    // render()
+                }
+                if(board[2] == board[3]) {
+                    console.log("2 == 3")
+                    board[2] = board[2] + board[3]
+                    board[3] = 0
+                    
+                }
+                render()
             }
-            if (board[1] == board[3]) {
-                board[1] = board[1] + board[3]
+            if (board[0] == 0) {
+                console.log("0 == 0")
+                board[0] = board[1]
                 board[1] = 0
+                render()
+                break
             }
-            // down arrow
+            if (board[2] == 0) {
+                console.log("1 == 0")
+                board[2] = board[3]
+                board[3] = 0
+                render()
+                break
+            }
+            // up arrow
             console.log(e.key)
             break;
-        case 'ArrowLeft':
-            // left arrow
-            console.log(e.key)
-            break;
+           
         case 'ArrowRight':
-            // right arrow
-            console.log(e.key)
+                if (board[1] == board[0] || board[3] == board[2]) {
+                    console.log("1 == 3","hitttttt")
+                    if (board[1] == board[0]) {
+                        board[1] = board[1] + board[0]
+                        board[0] = 0
+                        // render()
+                    }
+                    if(board[3] == board[2]) {
+                        console.log("2 == 3")
+                        board[3] = board[3] + board[2]
+                        board[2] = 0
+                        
+                    }
+                    render()
+                }
+                if (board[1] == 0) {
+                    console.log("0 == 0", "hit2")
+                    board[1] = board[0]
+                    board[0] = 0
+                    render()
+                    break
+                }
+                if (board[3] == 0) {
+                    console.log("1 == 0", "hit3")
+                    board[3] = board[2]
+                    board[2] = 0
+                    render()
+                    break
+                }
+                // up arrow
+                console.log(e.key)
+                break;
     }
 };
-
-// document.onkeydown = function (evt) {
-//     console.log(evt.key);
-//     switch (evt.key) {
-//         case 'ArrowUp':
-//         if(board[0] === board[2] | board[0] = 0) {
-//             board[0] === board[0] + board[2] | board
-//         } else {
-//             if(board[0] = 0)
-//             board[2] === board[0]
-//             return board;
-//         }
-
-//         if(board[1] === board[3]) {
-//             board[1] === board[1] + board[3]
-//             return board[1];
-//         } else {
-
-//         }
-//         }
-//             console.log("Move Tiles Up")
-
-
-
-
-
-
-
-//             break;
-//             case 'ArrowDown':
-//             function mvoeTile() {
-//                 if(board[2] === board[0])
-//                 board[2] === board[2] + board[0]
-//                 return board[2];
-//             }
-//             if(board[3] === board[2])
-//             board[3] === board[3] + board[2]
-//             return board[3];
-//             console.log("Move Tiles down")
-//             // down arrow
-//             break;
-//         case 'ArrowLeft':
-//         function moveTile() {
-//             if(board[0] === board[1])
-//             board[0] === board[0] + board[1]
-//             return board[0]
-//         }
-//         //  } else {
-//         //      if(board[0] | )
-
-//         //      if(board[2] === board[3])
-//         //      board[2] === board[2] + board[3]
-//         //      return board[2];
-//         //     }
-
-//             console.log("Move tiles left")
-//             // left arrow
-//             break;
-//         case 'ArrowRight':
-//             if(board[1] === board[0])
-//             board[1] === board[1] +
-//             console.log("Move tiles right")
-//             // right arrow
-//     }
-// };
