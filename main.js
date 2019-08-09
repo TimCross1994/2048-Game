@@ -36,7 +36,7 @@ function init() {
 }
 
 function initialPopulate(boardArray) {
-    for (i = 0; i < 2; i++) {
+    for (i = 0; i < 2;) {
         var checkElem = null;
         var assign = boardArray[generateNumber()]
         if (checkElem !== assign)
@@ -65,7 +65,7 @@ document.onkeydown = function (e) {
                     board[2] = 0
                     // render()
                 }
-                if(board[1] == board[3]) {
+                if (board[1] == board[3]) {
                     console.log("1 == 3")
                     board[1] = board[1] + board[3]
                     board[3] = 0
@@ -73,15 +73,13 @@ document.onkeydown = function (e) {
                     // break
                 }
                 render()
-            }
-            if (board[0] == 0) {
+            } else if (board[0] == 0) {
                 console.log("0 == 0")
                 board[0] = board[2]
                 board[2] = 0
                 render()
                 break
-            }
-            if (board[1] == 0) {
+            } else if (board[1] == 0) {
                 console.log("1 == 0", "hit4")
                 board[1] = board[3]
                 board[3] = 0
@@ -92,41 +90,39 @@ document.onkeydown = function (e) {
             console.log(e.key)
             break;
         case 'ArrowDown':
-                if (board[2] == board[0] || board[3] == board[1]) {
-                    console.log("2 == 0")
-                    if (board[2] == board[0]) {
-                        board[2] = board[2] + board[0]
-                        board[0] = 0
-                        // render()
-                    }
-                    if(board[3] == board[1]) {
-                        console.log("3 == 1")
-                        board[3] = board[3] + board[1]
-                        board[1] = 0
-                        // render()
-                        // break
-                    }
-                    render()
-                }
-                if (board[2] == 0) {
-                    console.log("00 == 00")
-                    board[2] = board[0]
+            if (board[2] == board[0] || board[3] == board[1]) {
+                console.log("2 == 0")
+                if (board[2] == board[0]) {
+                    board[2] = board[2] + board[0]
                     board[0] = 0
-                    render()
-                    break
+                    // render()
                 }
-                if (board[3] == 0) {
-                    console.log("1 == 0")
-                    board[3] = board[1]
+                if (board[3] == board[1]) {
+                    console.log("3 == 1")
+                    board[3] = board[3] + board[1]
                     board[1] = 0
-                    render()
-                    break
+                    // render()
+                    // break
                 }
-                // up arrow
-                console.log(e.key)
-                break;
-        
-            case 'ArrowLeft':
+                render()
+            } else if (board[2] == 0) {
+                console.log("00 == 00")
+                board[2] = board[0]
+                board[0] = 0
+                render()
+                break
+            } else if (board[3] == 0) {
+                console.log("1 == 0")
+                board[3] = board[1]
+                board[1] = 0
+                render()
+                break
+            }
+            // up arrow
+            console.log(e.key)
+            break;
+
+        case 'ArrowLeft':
             if (board[0] == board[1] || board[2] == board[3]) {
                 console.log("1 == 3")
                 if (board[0] == board[1]) {
@@ -134,22 +130,20 @@ document.onkeydown = function (e) {
                     board[1] = 0
                     // render()
                 }
-                if(board[2] == board[3]) {
+                if (board[2] == board[3]) {
                     console.log("2 == 3")
                     board[2] = board[2] + board[3]
                     board[3] = 0
-                    
+
                 }
                 render()
-            }
-            if (board[0] == 0) {
+            } else if (board[0] == 0) {
                 console.log("0 == 0")
                 board[0] = board[1]
                 board[1] = 0
                 render()
                 break
-            }
-            if (board[2] == 0) {
+            } else if (board[2] == 0) {
                 console.log("1 == 0")
                 board[2] = board[3]
                 board[3] = 0
@@ -159,39 +153,34 @@ document.onkeydown = function (e) {
             // up arrow
             console.log(e.key)
             break;
-           
+
         case 'ArrowRight':
-                if (board[1] == board[0] || board[3] == board[2]) {
-                    console.log("1 == 3","hitttttt")
-                    if (board[1] == board[0]) {
-                        board[1] = board[1] + board[0]
-                        board[0] = 0
-                        // render()
-                    }
-                    if(board[3] == board[2]) {
-                        console.log("2 == 3")
-                        board[3] = board[3] + board[2]
-                        board[2] = 0
-                        
-                    }
-                    render()
-                }
-                if (board[1] == 0) {
-                    console.log("0 == 0", "hit2")
-                    board[1] = board[0]
-                    board[0] = 0
-                    render()
-                    break
-                }
-                if (board[3] == 0) {
-                    console.log("1 == 0", "hit3")
-                    board[3] = board[2]
-                    board[2] = 0
-                    render()
-                    break
-                }
-                // up arrow
-                console.log(e.key)
-                break;
+            if (board[1] == board[0]) {
+                board[1] = board[1] + board[0]
+                board[0] = 0
+                // render()
+            }
+            if (board[3] == board[2]) {
+                console.log("2 == 3")
+                board[3] = board[3] + board[2]
+                board[2] = 0
+
+                // render()
+            } else if (board[1] == 0) {
+                console.log("0 == 0", "hit2")
+                board[1] = board[0]
+                board[0] = 0
+                render()
+                break
+            } else if (board[3] == 0) {
+                console.log("1 == 0", "hit3")
+                board[3] = board[2]
+                board[2] = 0
+                // render()
+            }
+            render()
     }
+    // up arrow
+    console.log(e.key)
+    render()
 };
