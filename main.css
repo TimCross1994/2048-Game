@@ -37,24 +37,13 @@ p {
     border-radius: 20px;
 }
 
-.scoreTypes {
-    height: 10vw;
-    column-count: 3;
+.Reset {
+    height: 5vw;
+    width: 10vw;
+    margin: 0 auto;
+    justify-content: center;
     text-align: center;
-    width: 20vw;
     background-color: #000000;
     border-radius: 20px;
     color: white;
-
 }
-#Score {
-    float: left;
-    margin: 0 auto;
-}
-
-#Best {
-    margin: 0 auto;
-}
-#Reset {
-    float: right;
-} 
