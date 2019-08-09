@@ -51,25 +51,45 @@ function render() {
     newTile11.textContent = board[3];
 
 }
-
 function randomNum() {
-    return Math.floor(Math.random() * board.length)
+    return Math.floor(Math.random()* board.length)
 }
-
 function addNumTwo() {
     if (count === 3 || count > 3) {
-        for (i = 0; i < board.length; i++) {
+        for(i = 0; i< board.length; i++){
             if (board[i] === 0) {
                 board[i] = 2
                 console.log(count, "countttttt")
                 break
-            }
+            } 
         }
         console.log(count, "countttttt")
         count = 0
     }
 }
-
+// function winLose() {
+//     for(i=0; i< board.length; i++) {
+//         if(board.Array === 16) {
+//             alert("You win");
+//             console.log("Eureka")
+//         } 
+//     }
+// };
+// let board = [2,2,2,2]
+// const check = () => {
+//     let newNum= 0;
+//     for (let i= 0; i < board.length; i++) {
+//         if (board[i]!== 0) {
+//             console.log("hit")
+//             checkNum += 1;
+//         }
+//     }
+//     if (checkNum === board.length) {
+//         alert("you lose")
+//     } else {
+//         newNum = 0
+//     }
+// }
 //     for (let i = 0; i < 4; i++) {
 //         for(let j = 0; j < 4; j++) {
 //             if(board[i][j] == 0) {
@@ -82,40 +102,17 @@ function addNumTwo() {
 //             return false;
 //         }  
 //         }
-
+    
 //         return true; 
 //     }
 // };      
-
+    
 
 
 document.onkeydown = function (e) {
     console.log(board)
     switch (e.key) {
         case 'ArrowUp':
-            function winLose() {
-                for (i = 0; i < board.length; i++) {
-                    if (board.Array === 16) {
-                        alert("You win");
-                        console.log("Eureka")
-                    }
-                }
-            };
-            let board = [2, 2, 2, 2]
-            const check = () => {
-                let newNum = 0;
-                for (let i = 0; i < board.length; i++) {
-                    if (board[i] !== 0) {
-                        console.log("hit")
-                        newNum += 1;
-                    }
-                }
-                if (newNum === board.length) {
-                    alert("you lose")
-                } else {
-                    newNum = 0
-                }
-            }
             addNumTwo();
             count += 1
             if (board[0] == board[2] || board[1] == board[3]) {
@@ -146,34 +143,10 @@ document.onkeydown = function (e) {
                 render()
                 break
             }
-
             // up arrow
             console.log(e.key)
             break;
         case 'ArrowDown':
-                function winLose() {
-                    for(i=0; i< board.length; i++) {
-                        if(board.Array === 16) {
-                            alert("You win");
-                            console.log("Eureka")
-                        } 
-                    }
-                };
-                let board = [2,2,2,2]
-                const check = () => {
-                    let newNum= 0;
-                    for (let i= 0; i < board.length; i++) {
-                        if (board[i]!== 0) {
-                            console.log("hit")
-                            newNum += 1;
-                        }
-                    }
-                    if (newNum === board.length) {
-                        alert("you lose")
-                    } else {
-                        newNum = 0
-                    }
-                }
             count += 1
             addNumTwo();
             if (board[2] == board[0] || board[3] == board[1]) {
@@ -209,29 +182,6 @@ document.onkeydown = function (e) {
             break;
 
         case 'ArrowLeft':
-            function winLose() {
-                for (i = 0; i < board.length; i++) {
-                    if (board.Array === 16) {
-                        alert("You win");
-                        console.log("Eureka")
-                    }
-                }
-            };
-            let board = [2, 2, 2, 2]
-            const check = () => {
-                let newNum = 0;
-                for (let i = 0; i < board.length; i++) {
-                    if (board[i] !== 0) {
-                        console.log("hit")
-                        newNum += 1;
-                    }
-                }
-                if (newNum === board.length) {
-                    alert("you lose")
-                } else {
-                    newNum = 0
-                }
-            }
             count += 1
             addNumTwo();
             if (board[0] == board[1] || board[2] == board[3]) {
@@ -266,57 +216,34 @@ document.onkeydown = function (e) {
             break;
 
         case 'ArrowRight':
-            function winLose() {
-                for (i = 0; i < board.length; i++) {
-                    if (board.Array === 16) {
-                        alert("You win");
-                        console.log("Eureka")
-                    }
-                }
-            };
-            let board = [2, 2, 2, 2]
-            const check = () => {
-                let newNum = 0;
-                for (let i = 0; i < board.length; i++) {
-                    if (board[i] !== 0) {
-                        console.log("hit")
-                        newNum += 1;
-                    }
-                }
-                if (newNum === board.length) {
-                    alert("you lose")
-                } else {
-                    newNum = 0
-                }
+            count += 1
+            addNumTwo();
+            if (board[1] == board[0]) {
+                board[1] = board[1] + board[0]
+                board[0] = 0
+                // render()
             }
-    }
-    count += 1
-    addNumTwo();
-    if (board[1] == board[0]) {
-        board[1] = board[1] + board[0]
-        board[0] = 0
-        // render()
-    }
-    if (board[3] == board[2]) {
-        console.log("2 == 3")
-        board[3] = board[3] + board[2]
-        board[2] = 0
+            if (board[3] == board[2]) {
+                console.log("2 == 3")
+                board[3] = board[3] + board[2]
+                board[2] = 0
 
-        // render()
-    } else if (board[1] == 0) {
-        console.log("0 == 0", "hit2")
-        board[1] = board[0]
-        board[0] = 0
-        render()
-        break
-    } else if (board[3] == 0) {
-        console.log("1 == 0", "hit3")
-        board[3] = board[2]
-        board[2] = 0
-        // render()
+                // render()
+            } else if (board[1] == 0) {
+                console.log("0 == 0", "hit2")
+                board[1] = board[0]
+                board[0] = 0
+                render()
+                break
+            } else if (board[3] == 0) {
+                console.log("1 == 0", "hit3")
+                board[3] = board[2]
+                board[2] = 0
+                // render()
+            }
+            render()
     }
-    render()
     // up arrow
     console.log(e.key)
     render()
-}
+};
