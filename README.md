@@ -4,7 +4,12 @@
   <img width="460" height="300" src="https://i.imgur.com/U57anZ4.png?1" title="source: imgur.com">
 </p>
 
-## Instructions
-This is a game that requires a little bit of math in order to play. The game occurs on a 4 X 4 board and starts with just two numbered two tiles that are placed randomly on the board. It is then up to the player to combine like numbered tiles together in order to get one tile that equals the sum of two numbers added together. Or simply put, 2+2=4, 4+4=8, etc. A player makes a move on the board by pressing any of the arrow keys in order to move the tiles up, left, right, or down. 
-The player needs to be careful though as each time a move is played a new number two tile is added to the board. If the board fills up completely with tiles then the player loses and a Game Over pops up on the board. If the player wins the game by getting to 2048 then a winner pop up will appear on the screen with a continue option button underneath allowing the user to keep on playing the game for an even higher number combination.
+This Web Application allows is a simpler version of the classic game of 2048. With this version the goal is to try to get to the number 16.
+
+##The Objective
+<hr>
+The goal is to get to the number 16 before the board populates with numbers. 
+
+##The Play
+A player users the arrow keys to move numbers either up, down, left, or right on a two by two board. The game ends when you finally reach the number 16. 
 
